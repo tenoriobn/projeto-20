@@ -1,0 +1,10 @@
+@import "./reset";
+@import "./variables";
+
+body {
+    font-family: $ubuntu;
+    font-size: 1rem;
+    font-weight: 400;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
