@@ -1,7 +1,10 @@
+@import "styles/variables";
+
 .header {
     background-image: url(./bg-sidebar-mobile.svg);
+    background-position: 50% 100%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     height: 172px;
 
     padding: 2rem 1rem 0 1rem;
@@ -13,18 +16,43 @@
         gap: 1rem;
 
         &__navlink {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
             text-decoration: none;
 
-            .number {
-                background-color: red;
-                padding: 12px;
+            &__number {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border: 1px solid $white;
                 border-radius: 100%;
+                color: $white;
+                font-size: .875rem;
+                font-weight: 700;
+                text-decoration: none;
 
+                width: 40px;
+                height: 40px;
+                
+                &_active {
+                    background-color: $lightBlue;
+                    border: none;
+                    color: $marineBlue;
+                }
             }
 
-            .text {
-                display: none;
+            &__text {
+                display: block;
+                color: $white;
+                font-size: .875rem;
+                font-weight: 700;
             }
+            
         }
+
     }
 }
