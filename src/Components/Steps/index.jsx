@@ -5,26 +5,42 @@ import Step from './Step';
 export default function Steps() {
     return (
         <header className={styles.header}>
-            <nav className={styles.header__nav}>
-                <Step to="/" styles={styles}>
-                    <span className={styles.header__nav__navlink__number}>1</span> 
-                    <span className={styles.header__nav__navlink__text}>Your Info</span>
-                </Step>
-                
-                <Step to="/selectplan" styles={styles}>
-                    <span className={styles.header__nav__navlink__number}>2</span> 
-                    <span className={styles.header__nav__navlink__text}>Select Plan</span>
-                </Step>
+            <nav className={styles.nav}>
+                <li className={styles.li}>
+                    <Step to="/" styles={styles}>1</Step>
 
-                <Step to="/pickaddons" styles={styles}>
-                    <span className={styles.header__nav__navlink__number}>3</span> 
-                    <span className={styles.header__nav__navlink__text}>Add-Ons</span>
-                </Step>
-                
-                <Step to="/finishingup" styles={styles}>
-                    <span className={styles.header__nav__navlink__number}>4</span> 
-                    <span className={styles.header__nav__navlink__text}>Summary</span>
-                </Step>
+                    <div className={styles.step__section}>
+                        <h4 className={styles.step__number}>step 1</h4>
+                        <h3 className={styles.step__name}>Your Info</h3>
+                    </div>
+                </li>
+
+                <li className={styles.li}>
+                    <Step to="/selectplan" styles={styles}>2</Step>
+
+                    <div className={styles.step__section}>
+                        <h4 className={styles.step__number}>step 2</h4>
+                        <h3 className={styles.step__name}>Select Plan</h3>
+                    </div>
+                </li>
+
+                <li className={styles.li}>
+                    <Step to="/pickaddons" styles={styles}>3</Step>
+
+                    <div className={styles.step__section}>
+                        <h4 className={styles.step__number}>step 3</h4>
+                        <h3 className={styles.step__name}>Add-Ons</h3>
+                    </div>
+                </li>
+
+                <li className={styles.li}>
+                    <Step to="/finishingup" styles={styles}>4</Step>
+
+                    <div className={styles.step__section}>
+                        <h4 className={styles.step__number}>step 4</h4>
+                        <h3 className={styles.step__name}>Summary</h3>
+                    </div>
+                </li>
             </nav>
         </header>
     )

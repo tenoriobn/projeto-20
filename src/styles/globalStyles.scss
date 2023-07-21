@@ -10,9 +10,9 @@ body {
     min-height: 100vh;
 }
 
-// @media screen and (min-width: 992px) {
-//     body {
-//         display: grid;
-//         gap: 80px;
-//     }
-// }
+@media screen and (min-width: 992px) {
+    #root {
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+}

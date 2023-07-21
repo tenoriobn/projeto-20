@@ -6,8 +6,8 @@ export default function Step( {children, to, styles} ) {
         <NavLink 
             className={
                 ({isActive}) => `
-                    ${styles.header__nav__navlink} 
-                    ${isActive ? styles.header__nav__navlink__number_active : ""}
+                    ${styles.navlink} 
+                    ${isActive ? styles.active : ""}
                 `} 
             to={to}
         >

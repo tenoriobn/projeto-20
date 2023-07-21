@@ -10,7 +10,7 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Steps />
-
+      
       <Routes>
         <Route path="/" element={<PersonalInfo />} />
         <Route path="/selectplan" element={<SelectPlan />} />
