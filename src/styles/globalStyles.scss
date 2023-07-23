@@ -14,5 +14,8 @@ body {
     #root {
         display: grid;
         grid-template-columns: auto 1fr;
+        grid-template-areas: 
+            "header main"
+        ;
     }
 }
