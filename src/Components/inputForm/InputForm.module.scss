@@ -1,0 +1,28 @@
+@import "./../../styles/variables";
+
+.container__input {
+    display: flex;
+    flex-direction: column;
+
+    .label {
+        @include font-styling($marineBlue, .75rem, 400);
+        margin-bottom: .25rem;
+    }
+
+    .input {
+        outline: none;
+        border: 1px solid $lightGray;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+        @include font-styling($marineBlue, 14px, 700);
+
+        height: 40px;
+
+        padding: 0 .875rem;
+
+        &::placeholder {
+            @include font-styling($coolGray, 14px, 700);
+        }
+    }
+}

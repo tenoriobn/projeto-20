@@ -1,3 +1,16 @@
+@import "../../styles/variables";
+
 .main {
     grid-area: main;
+    margin: 0 1rem;
+    padding: 2rem 1.5rem;
+
+    background-color: $white;
+    border-radius: .5rem;
+
+    margin-top: -4.625rem;
+}
+
+@media screen and (min-width) {
+    
 }

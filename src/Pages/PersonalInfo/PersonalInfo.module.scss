@@ -1,1 +1,19 @@
-@import "styles/variables";
+@import "./../../styles/variables";
+
+.container__personalInfo {
+    .title {
+        @include font-styling($marineBlue, 1.5rem, 700);
+        margin-bottom: .875rem;
+    }
+
+    .paragraph {
+        margin-bottom: 1.5rem;
+        max-width: 232px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

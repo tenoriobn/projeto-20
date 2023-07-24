@@ -1,0 +1,15 @@
+.container__personalInfo .title {
+  color: hsl(213, 96%, 18%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.875rem;
+}
+.container__personalInfo .paragraph {
+  margin-bottom: 1.5rem;
+  max-width: 232px;
+}
+.container__personalInfo .form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}/*# sourceMappingURL=PersonalInfo.module.css.map */
