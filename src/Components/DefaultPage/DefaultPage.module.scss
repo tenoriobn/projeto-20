@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "styles/variables";
 
 .main {
     grid-area: main;
@@ -7,8 +7,6 @@
 
     background-color: $white;
     border-radius: .5rem;
-
-    margin-top: -4.625rem;
 }
 
 @media screen and (min-width: 992px) {
