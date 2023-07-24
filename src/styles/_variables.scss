@@ -14,3 +14,10 @@ $white: hsl(0, 0%, 100%);
 
 //Fonts
 $ubuntu: 'Ubuntu', sans-serif;
+
+//Mixins
+@mixin font-styling($color, $font-size, $font-weight) {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}

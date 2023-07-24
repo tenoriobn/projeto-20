@@ -3,6 +3,7 @@
 .header {
     grid-area: header;
     
+    box-sizing: border-box;
     background-image: url(./bg-sidebar-mobile.svg);
     background-position: 50% 100%;
     background-repeat: no-repeat;
@@ -22,6 +23,7 @@
             gap: 1rem;
 
             .navlink {
+                @include font-styling($white, .875rem, 700);
                 text-decoration: none;
 
                 display: flex;
@@ -30,13 +32,10 @@
 
                 border: 1px solid $white;
                 border-radius: 100%;
-                color: $white;
-                font-size: .875rem;
-                font-weight: 700;
                 text-decoration: none;
 
-                width: 40px;
-                height: 40px;
+                width: 32px;
+                height: 32px;
             }
 
             .active {
@@ -49,19 +48,15 @@
                 display: none;
 
                 .step__number {
+                    @include font-styling($pastelBlue, .75rem, 400);
                     text-transform: uppercase;
-                    color: $pastelBlue;
-                    font-size: .75rem;
-                    font-weight: 400;
-    
-                    margin-bottom: .5rem;
+                    margin-bottom: .375rem;
                 }
     
                 .step__name {
+                    @include font-styling($white, .875rem, 700);
                     text-transform: uppercase;
-                    color: $white;
-                    font-size: .875rem;
-                    font-weight: 700;
+                    letter-spacing: .0612rem;
                 }
             }
         }
@@ -71,7 +66,7 @@
 @media screen and (min-width: 992px) {
     .header {    
         background-image: url(./bg-sidebar-desktop.svg);
-        height: 100vh;
+        height: 568px;
         width: 274px;
     
         padding: 2.5rem 2rem 0 2rem;
@@ -88,80 +83,3 @@
         }
     }
 }
-
-
-
-
-/*
-
-.header {
-    background-image: url(./bg-sidebar-mobile.svg);
-    background-position: 50% 100%;
-    background-repeat: no-repeat;
-    background-size:cover;
-    height: 172px;
-
-    padding: 2rem 1rem 0 1rem;
-
-    &__nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-
-        &__navlink {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-
-            text-decoration: none;
-
-            &__number {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                border: 1px solid $white;
-                border-radius: 100%;
-                color: $white;
-                font-size: .875rem;
-                font-weight: 700;
-                text-decoration: none;
-
-                width: 40px;
-                height: 40px;
-                
-            }
-            
-            &__active {
-                background-color: $lightBlue;
-                border: none;
-                color: $marineBlue;
-            }
-            
-            &__text {
-                display: none;
-                color: $white;
-                font-size: .875rem;
-                font-weight: 700;
-            }
-            
-        }
-
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .header {
-        &__nav {
-            &__navlink {
-                &__text {
-                    display: flex;
-                }
-            }
-        }
-    }
-}
-
-*/
