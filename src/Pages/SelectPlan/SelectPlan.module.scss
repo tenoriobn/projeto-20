@@ -5,3 +5,10 @@
     flex-direction: column;
     gap: .75rem;
 }
+
+@media screen and (min-width: 768px) {
+    .plan__card__container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
