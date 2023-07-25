@@ -21,32 +21,3 @@ $ubuntu: 'Ubuntu', sans-serif;
     font-size: $font-size;
     font-weight: $font-weight;
 }
-
-// // Global Styles
-// .title {
-//     @include font-styling($marineBlue, 1.5rem, 700);
-//     margin-bottom: .875rem;
-// }
-
-// .paragraph {
-//     margin-bottom: 1.5rem;
-//     max-width: 232px;
-// }
-
-// @media screen and (min-width:425px) {
-//     .container__personalInfo {
-//         .paragraph {
-//             margin-bottom: 2.5rem;
-//             max-width: max-content;
-//         }
-//     }
-// }
-
-// @media screen and (min-width:992px) {
-//     .container__personalInfo {
-//         .title {
-//             font-size: 2rem;
-//             margin-bottom: .875rem;
-//         }
-//     }
-// }

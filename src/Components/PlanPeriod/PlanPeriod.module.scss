@@ -1,0 +1,51 @@
+@import "styles/variables";
+
+.plan__period {
+    background-color: $magnolia;
+
+    border-radius: .5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+
+    .period {
+        @include font-styling($coolGray, .875rem, 700);
+    }
+
+    .select {
+        color: $marineBlue;
+    }
+
+    .period__select {
+        background-color: $marineBlue;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        width: 38px;
+        height: 20px;
+
+        .checkbox {
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $white;
+            position: absolute;
+            transform: translate(-50%);
+            top: .5px;
+            left: 6px;
+            cursor: pointer;
+
+            &:checked {
+                background-color: $white;
+                left: 24px;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@import "styles/variables";
+
+.plan__card {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid $lightGray;
+    border-radius: .5rem;
+
+    gap: .875rem;
+
+    padding: 1rem;
+
+    .container__cardInfo {
+        .plan__name {
+            @include font-styling($marineBlue, 1rem, 500);
+
+            margin-bottom: .375rem;
+        }
+
+        .plan__value {
+            @include font-styling($coolGray, .875rem, 500);
+        }
+    }
+}
