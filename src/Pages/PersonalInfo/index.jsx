@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './PersonalInfo.module.scss'
 import InputForm from 'Components/inputForm';
+import Heading from 'Components/Heading';
 
 export default function PersonalInfo() {
     return (
         <div className={styles.container__personalInfo}>
-            <h2 className={styles.title}>Personal Info</h2>
-            <h3 className={styles.paragraph}>Please provide your name, email address, and phone number.</h3>
+            <Heading
+                title="Personal Info"
+                paragraph="Please provide your name, email address, and phone number."
+            />
 
             <form action="" className={styles.form}>
                 <InputForm 
