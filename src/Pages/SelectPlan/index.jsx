@@ -9,7 +9,7 @@ import PlanPeriod from 'Components/PlanPeriod';
 
 export default function SelectPlan() {
     return (
-        <div className="">
+        <section className="">
             <Heading 
                 title="Select your plan"
                 paragraph="You have the option of monthly or yearly billing."
@@ -37,6 +37,6 @@ export default function SelectPlan() {
 
             <PlanPeriod />
             
-        </div>
+        </section>
     )
 }

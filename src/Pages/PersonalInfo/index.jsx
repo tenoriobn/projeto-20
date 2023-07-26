@@ -5,7 +5,7 @@ import Heading from 'Components/Heading';
 
 export default function PersonalInfo() {
     return (
-        <div className={styles.container__personalInfo}>
+        <section className={styles.container__personalInfo}>
             <Heading
                 title="Personal Info"
                 paragraph="Please provide your name, email address, and phone number."
@@ -30,6 +30,6 @@ export default function PersonalInfo() {
                     placeholder="e.g. +1 234 567 890"
                 />
             </form>
-        </div>
+        </section>
     )
 }

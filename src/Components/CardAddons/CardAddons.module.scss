@@ -1,0 +1,55 @@
+@import "styles/variables";
+
+.addons {
+    border: 1px solid $lightGray;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem;
+
+    .addons__container__inputLabel {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .addons__checkbox {
+            appearance: none;
+            border: 1px solid $lightGray;
+            border-radius: 4px;
+            background: $white;
+
+            cursor: pointer;
+            
+            width: 20px;
+            height: 20px;
+
+            &:checked {
+                background-image: url(./icon-checkmark.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+
+                background-color: $purplishBlue;
+                border-color: $purplishBlue;
+                left: 24px;
+            }
+        }
+
+        .addons__text__container {
+            .addons__name {
+                @include font-styling($marineBlue, .875rem, 700);
+                margin-bottom: .375rem;
+            }
+
+            .addons__description {
+                @include font-styling($coolGray, .75rem, 500);
+            }
+        }
+    }
+
+    .addons__value {
+        @include font-styling($purplishBlue, .75rem, 500);
+    }
+}
