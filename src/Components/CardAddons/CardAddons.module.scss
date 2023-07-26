@@ -53,3 +53,25 @@
         @include font-styling($purplishBlue, .75rem, 500);
     }
 }
+
+@media screen and (min-width: 992px) {
+    .addons {
+        padding: 20px 24px;
+
+        .addons__container__inputLabel {
+            .addons__text__container {
+                .addons__name {
+                    font-size: 1rem;
+                }
+    
+                .addons__description {
+                    font-size: .875rem;
+                }
+            }
+        }
+
+        .addons__value {
+            font-size: .875rem;
+        }
+    }
+}
