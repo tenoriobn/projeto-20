@@ -1,0 +1,56 @@
+@import 'styles/variables';
+
+.finishingup__selectedoptions {
+    background-color: $alabaster;
+    border-radius: .50rem;
+    display: grid;
+    grid-template-columns: repeat(1fr auto);
+    align-items: center;
+
+    padding: 1.25rem 1rem;
+
+    .selectedplan, .line {
+        grid-column: 1 / 3;
+    }
+
+    .selectedplan {
+        @include font-styling($marineBlue, .875rem, 500);
+        margin-bottom: 4px;
+    }
+    
+    .line {
+        height: 1px;
+        background-color: $lightGray;
+        margin-bottom: 1rem;
+    }
+
+    .selectedplan__info, .selectedplan__value {
+        @include font-styling('', .875rem, 500);
+        color: $coolGray;
+        margin-top: 2.75rem;
+
+        &:not(:nth-last-child(-n + 2)) {
+            margin-bottom: 1rem;
+            margin-top: 0rem;
+        }
+    }
+
+    .selectedplan__info_alt {
+        text-decoration: underline;
+    }
+    
+    .selectedplan__value {
+        color: $marineBlue;
+        justify-self: flex-end;
+        align-self: center;
+    }
+
+    .selectedplan__value_alt {
+        font-weight: 700;
+    }
+
+    .selectedplan__total {
+        @include font-styling($purplishBlue, 1rem, 700)
+    }
+}
+
