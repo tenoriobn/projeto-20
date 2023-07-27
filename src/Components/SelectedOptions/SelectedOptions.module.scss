@@ -54,3 +54,42 @@
     }
 }
 
+@media screen and (min-width: 992px) {
+    .finishingup__selectedoptions {
+        padding: 1.25rem 1.5rem;
+    
+        .selectedplan {
+            @include font-styling('', 1rem, 500);
+            margin-bottom: 6px;
+        }
+        
+        .line {
+            height: 1px;
+            background-color: $lightGray;
+            margin-bottom: 1.5rem;
+        }
+    
+        .selectedplan__info, .selectedplan__value {
+            @include font-styling('', .875rem, 500);
+            color: $coolGray;
+            margin-top: 3.25rem;
+    
+            &:not(:nth-last-child(-n + 2)) {
+                margin-bottom: 1.5rem;
+                margin-top: 0rem;
+            }
+        }
+
+        .selectedplan__value {
+            color: $marineBlue;
+        }
+    
+        .selectedplan__value_alt {
+            font-size: 1rem;
+        }
+    
+        .selectedplan__total {
+            @include font-styling($purplishBlue, 1.25rem, 700)
+        }
+    }
+}
