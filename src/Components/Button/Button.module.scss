@@ -1,0 +1,44 @@
+@import 'styles/variables';
+
+.button__container {
+    background-color: $white;
+
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 1.5rem;
+
+    .button {
+        appearance: none;
+        border: none;
+    
+        background-color: $marineBlue;
+        border-radius: .25rem;
+
+        cursor: pointer;
+    
+        @include font-styling($white, .875rem, 700);
+
+        margin: 1rem 1.25rem;
+    
+        max-width: 97px;
+        height: 40px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .button__container {
+        padding: 0 8rem;
+
+        .button {
+            margin: 1rem 0 1rem 0;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .button__container {
+        padding: 0 6.25rem;
+    }
+}

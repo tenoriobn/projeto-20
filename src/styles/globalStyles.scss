@@ -10,6 +10,11 @@ body {
     min-height: 100vh;
 }
 
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 992px) {
     body {   
         display: flex;
@@ -20,8 +25,10 @@ body {
     #root {
         display: grid;
         grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr auto;
         grid-template-areas: 
             "header main"
+            "header button"
         ;
 
         background-color: white;

@@ -14,7 +14,7 @@
 @media screen and (min-width: 768px) {
     .main {
         width: 464px;
-        margin: -4.625rem auto;
+        align-self: center;
     }
 }
 
@@ -28,6 +28,7 @@
     
         margin: 0;
 
+        align-self: flex-start;
         width: auto;
     }
 }
