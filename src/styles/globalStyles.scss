@@ -7,7 +7,6 @@ body {
     font-family: $ubuntu;
     background-color: $magnolia;
     box-sizing: border-box;
-    min-height: 100vh;
 }
 
 #root {
@@ -20,6 +19,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 100vh;
     }
 
     #root {

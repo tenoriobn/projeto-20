@@ -1,29 +1,53 @@
 @import 'styles/variables';
 
 .button__container {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
     background-color: $white;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 
     margin-top: 1.5rem;
+
+    padding: 1rem;
 
     .button {
         appearance: none;
         border: none;
-    
-        background-color: $marineBlue;
         border-radius: .25rem;
 
         cursor: pointer;
     
         @include font-styling($white, .875rem, 700);
-
-        margin: 1rem 1.25rem;
     
         max-width: 97px;
         height: 40px;
         width: 100%;
+    }
+
+    .nextstep {
+        background-color: $marineBlue;
+
+        &:hover {
+            background-color: $hoverPurplish;
+        }
+    }
+
+    .goback {
+        appearance: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        @include font-styling($coolGray, .875rem, 700);
+    
+        &:hover {
+            color: $marineBlue;
+        }
     }
 }
 
@@ -39,6 +63,17 @@
 
 @media screen and (min-width: 992px) {
     .button__container {
+        position: relative;
+
         padding: 0 6.25rem;
+        margin: 1rem 0;
+
+        .button {
+            margin: 0;
+        }
+
+        .goback {
+            font-size: 1rem;
+        }
     }
 }

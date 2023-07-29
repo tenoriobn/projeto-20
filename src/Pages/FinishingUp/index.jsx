@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './FinishingUp.module.scss';
 import Heading from 'Components/Heading';
 import SelectedOptions from 'Components/SelectedOptions';
+import ThankYou from 'Components/ThankYou';
 
 export default function FinishingUp() {
     return (
@@ -12,6 +13,8 @@ export default function FinishingUp() {
             />
 
             <SelectedOptions />
+
+            {/* <ThankYou /> */}
         </section>
     )
 }
