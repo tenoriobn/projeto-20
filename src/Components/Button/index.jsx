@@ -5,11 +5,13 @@ import NextStep from './NextStep';
 
 export default function Button( {children, nextstep} ) {
     return (
-        <section className={styles.button__container}>
-            <GoBack styles={styles} />
+        <footer className={styles.footer} >
+            <div className={styles.button__container}>
+                <GoBack styles={styles} />
 
-            <NextStep styles={styles} nextstep={nextstep} children={children} />
+                <NextStep styles={styles} nextstep={nextstep} children={children} />
+            </div>
 
-        </section>
+        </footer>
     )
 }

@@ -1,74 +1,72 @@
 @import 'styles/variables';
 
-.button__container {
-    box-sizing: border-box;
+.footer {
     background-color: $white;
 
-    justify-self: center;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-top: 1.5rem;
-    padding: 1rem;
-
-    max-width: 450px;
-
-
-    .button {
-        appearance: none;
-        border: none;
-        border-radius: .25rem;
-
-        cursor: pointer;
+    margin-top: auto;
     
-        @include font-styling($white, .875rem, 700);
-    
-        max-width: 97px;
-        height: 40px;
-        width: 100%;
-    }
+    width: 100%;
 
-    .nextstep {
-        background-color: $marineBlue;
-
-        &:hover {
-            background-color: $hoverPurplish;
-        }
-    }
-
-    .goback {
-        appearance: none;
-        border: none;
-        background: none;
-        cursor: pointer;
-        @include font-styling($coolGray, .875rem, 700);
-    
-        &:hover {
-            color: $marineBlue;
-        }
-    }
-}
-
-@media screen and (min-width: 768px) {
     .button__container {
-        align-self: center;
-        width: 100%;
+        box-sizing: border-box;
 
-        border-radius: .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        max-width: 450px;
+    
+        margin: 0 auto;
+        padding: 1rem;
+    
+        .button {
+            appearance: none;
+            border: none;
+            border-radius: .25rem;
+    
+            cursor: pointer;
+        
+            @include font-styling($white, .875rem, 700);
+        
+            max-width: 97px;
+            height: 40px;
+            width: 100%;
+        }
+    
+        .nextstep {
+            background-color: $marineBlue;
+    
+            &:hover {
+                background-color: $HoverMarineBlue;
+            }
+        }
+    
+        .goback {
+            appearance: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+            @include font-styling($coolGray, .875rem, 700);
+        
+            &:hover {
+                color: $marineBlue;
+            }
+        }
     }
 }
 
 @media screen and (min-width: 992px) {
-    .button__container {
-        position: relative;
+    .footer {
+        .button__container {
+            padding: 1rem 0;
 
-        padding: 0;
-        margin: 0 0 1rem 0;
-
-        .goback {
-            font-size: 1rem;
+            .button, .goback {
+                font-size: 1rem;
+            }
+    
+            .button {
+                max-width: 124px;
+            }
         }
     }
 }
