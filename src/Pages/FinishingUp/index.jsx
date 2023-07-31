@@ -7,14 +7,14 @@ import ThankYou from 'Components/ThankYou';
 export default function FinishingUp() {
     return (
         <section className={styles.finishingup__container}>
-            {/* <Heading
+            <Heading
                 title="Finishing up"
                 paragraph="Double-check everything looks OK before confirming."
             />
 
-            <SelectedOptions /> */}
+            <SelectedOptions />
 
-            <ThankYou />
+            {/* <ThankYou /> */}
         </section>
     )
 }

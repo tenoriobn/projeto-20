@@ -24,7 +24,7 @@ export default function AppRoutes() {
         <Route path="*" element={<div>Página não encontrada</div>} />
       </Routes>
 
-      {/* <Button nextstep="nextstep">Next Step</Button> */}
+      <Button nextstep="nextstep">Next Step</Button>
     </BrowserRouter>
   );
 }

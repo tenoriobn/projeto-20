@@ -28,6 +28,8 @@ export default function DefaultPage() {
         - Nomeclatura
     
     * Aplicar pseudo-classes `hover, active e etc...`
+
+    * Corrigir background do `Finishing up`
     
     * Iniciar lógica de interação.
         - Observar a funcionalidades necessárias
