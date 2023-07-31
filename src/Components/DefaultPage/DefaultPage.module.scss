@@ -2,33 +2,34 @@
 
 .main {
     grid-area: main;
+    
+    background-color: $white;
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 0px 10px -6px rgb(0 0 0 / 0.1);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    
     margin: -4.625rem 1rem 0 1rem;
     padding: 2rem 1.5rem;
-
-    background-color: $white;
-    border-radius: .5rem;
-
-    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 0px 10px -6px rgb(0 0 0 / 0.1);
+    max-width: 450px;
 }
 
 @media screen and (min-width: 768px) {
     .main {
-        width: 464px;
         align-self: center;
+        width: 100%;
     }
 }
 
 @media screen and (min-width: 992px) {
     .main {
-        padding: 2.5rem 6.25rem;
-    
+        align-self: flex-start;
+        justify-self: center;
+
         background-color: $white;
         border-radius: .5rem;
         box-shadow: none;
-    
-        margin: 0;
 
-        align-self: flex-start;
-        width: auto;
+        margin: 0;
+        padding: 40px 0 0 0;
     }
 }

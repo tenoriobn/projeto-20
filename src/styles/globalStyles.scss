@@ -3,44 +3,5 @@
 @import "./variables";
 
 body {
-    @include font-styling($coolGray, 1rem, 400);
-    font-family: $ubuntu;
     background-color: $magnolia;
-    box-sizing: border-box;
-}
-
-#root {
-    display: flex;
-    flex-direction: column;
-}
-
-@media screen and (min-width: 992px) {
-    body {   
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-
-    #root {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: 1fr auto;
-        grid-template-areas: 
-            "header main"
-            "header button"
-        ;
-
-        background-color: white;
-        border-radius: 1rem;
-
-        max-width: 908px;
-        max-height: 600px;
-        width: 100%;
-        height: 100%;
-
-        padding: 1rem;
-
-        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    }
 }
