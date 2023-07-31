@@ -1,20 +1,20 @@
 @import 'styles/variables';
 
 .button__container {
-    position: fixed;
-    right: 0;
-    left: 0;
-    bottom: 0;
-
+    box-sizing: border-box;
     background-color: $white;
+
+    justify-self: center;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     margin-top: 1.5rem;
-
     padding: 1rem;
+
+    max-width: 450px;
+
 
     .button {
         appearance: none;
@@ -53,11 +53,10 @@
 
 @media screen and (min-width: 768px) {
     .button__container {
-        padding: 0 8rem;
+        align-self: center;
+        width: 100%;
 
-        .button {
-            margin: 1rem 0 1rem 0;
-        }
+        border-radius: .5rem;
     }
 }
 
@@ -65,12 +64,8 @@
     .button__container {
         position: relative;
 
-        padding: 0 6.25rem;
-        margin: 1rem 0;
-
-        .button {
-            margin: 0;
-        }
+        padding: 0;
+        margin: 0 0 1rem 0;
 
         .goback {
             font-size: 1rem;
