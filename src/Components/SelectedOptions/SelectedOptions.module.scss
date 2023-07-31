@@ -3,54 +3,65 @@
 .finishingup__selectedoptions {
     background-color: $alabaster;
     border-radius: .50rem;
-    display: grid;
-    grid-template-columns: repeat(1fr auto);
-    align-items: center;
-
-    padding: 1.25rem 1rem;
-
-    .selectedplan, .line {
-        grid-column: 1 / 3;
-    }
-
-    .selectedplan {
-        @include font-styling($marineBlue, .875rem, 500);
-        margin-bottom: 4px;
-    }
     
-    .line {
-        height: 1px;
-        background-color: $lightGray;
-        margin-bottom: 1rem;
-    }
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.75rem;
 
-    .selectedplan__info, .selectedplan__value {
-        @include font-styling('', .875rem, 500);
-        color: $coolGray;
-        margin-top: 2.75rem;
+    .selectedoptions__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: .875rem;
 
-        &:not(:nth-last-child(-n + 2)) {
-            margin-bottom: 1rem;
-            margin-top: 0rem;
+        &:nth-of-type(4) {
+            margin-bottom: 0;
+        }
+
+        .info__container {
+            .selectedplan {
+                @include font-styling($marineBlue, .875rem, 500);
+                margin-bottom: 4px;
+            }
+
+            .selectedplan__change {
+                @include font-styling('', .875rem, 500);
+                color: $coolGray;
+                text-decoration: underline;
+            }
+        }
+
+        
+        .selectedplan__info, .selectedplan__addons__value, .selectedplan__plan__value {
+            @include font-styling('', .875rem, 500);
+        }
+        
+        .selectedplan__plan__value {
+            color: $marineBlue;
+        }
+        
+        .selectedplan__addons__value {
+            color: $marineBlue;
         }
     }
 
-    .selectedplan__info_alt {
-        text-decoration: underline;
+    .line {
+        height: 1px;
+        background-color: $lightGray;
+        margin-bottom: .875rem;
     }
-    
-    .selectedplan__value {
-        color: $marineBlue;
-        justify-self: flex-end;
-        align-self: center;
+}
+
+.total__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    .selectedplan__info {
+        @include font-styling('', .875rem, 500);
     }
 
-    .selectedplan__value_alt {
-        font-weight: 700;
-    }
-
-    .selectedplan__total {
-        @include font-styling($purplishBlue, 1rem, 700)
+    .selectedplan__addons__value {
+        @include font-styling($purplishBlue, 1rem, 700);
     }
 }
 
@@ -58,38 +69,31 @@
     .finishingup__selectedoptions {
         padding: 1.25rem 1.5rem;
     
-        .selectedplan {
-            @include font-styling('', 1rem, 500);
-            margin-bottom: 6px;
-        }
-        
-        .line {
-            height: 1px;
-            background-color: $lightGray;
+        .selectedoptions__container {
             margin-bottom: 1.5rem;
-        }
     
-        .selectedplan__info, .selectedplan__value {
-            @include font-styling('', .875rem, 500);
-            color: $coolGray;
-            margin-top: 3.25rem;
-    
-            &:not(:nth-last-child(-n + 2)) {
-                margin-bottom: 1.5rem;
-                margin-top: 0rem;
+            .info__container {
+                .selectedplan {
+                    font-size: 1rem;
+                    margin-bottom: 6px;
+                }
+            }
+
+            .selectedplan__plan__value {
+                font-size: 1rem;
             }
         }
+    
+        .line {
+            margin-bottom: 1.25rem;
+        }
+    }
+    
+    .total__container {
+        padding: 0 1.5rem;
 
-        .selectedplan__value {
-            color: $marineBlue;
-        }
-    
-        .selectedplan__value_alt {
-            font-size: 1rem;
-        }
-    
-        .selectedplan__total {
-            @include font-styling($purplishBlue, 1.25rem, 700)
+        .selectedplan__addons__value {
+            font-size: 1.25rem;
         }
     }
 }

@@ -1,3 +1,5 @@
+/* eslint-disable import/no-anonymous-default-export */
+
 import React from 'react';
 import styles from './FinishingUp.module.scss';
 import Heading from 'Components/Heading';

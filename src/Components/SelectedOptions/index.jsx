@@ -1,38 +1,52 @@
 import React from 'react'
 import styles from './SelectedOptions.module.scss'
-import SelectedOptionsInfo from './SelectedOptionInfo'
 
 export default function SelectedOptions() {
     return (
-        <div className={styles.finishingup__selectedoptions}>
-            <h3 className={styles.selectedplan}>Arcade (Monthly)</h3>
+        <>
+            <div className={styles.finishingup__selectedoptions}>
+                <div className={styles.selectedoptions__container}>
+                    <div className={styles.info__container}>
+                        <h3 className={styles.selectedplan}>Arcade (Monthly)</h3>
+                        <h4 className={styles.selectedplan__change}>
+                            Change
+                        </h4>
+                    </div>
 
-            <SelectedOptionsInfo 
-                styles={styles} 
-                infoPlan="Change"
-                valuePlan="$9/mo"
-            />
+                    <h5 className={styles.selectedplan__plan__value}>
+                        $9/mo
+                    </h5>
+                </div>
 
-            <div className={styles.line}></div>
+                <div className={styles.line}></div>
 
-            <SelectedOptionsInfo 
-                styles={styles} 
-                infoPlan="Online service"
-                valuePlan="+$1/mo"
-            />
-            
-            <SelectedOptionsInfo 
-                styles={styles} 
-                infoPlan="Larger storage"
-                valuePlan="+$2/mo"
-            />
+                <div className={styles.selectedoptions__container}>
+                    <h4 className={styles.selectedplan__info}>
+                        Online service
+                    </h4>
+                    <h5 className={styles.selectedplan__addons__value}>
+                        +$1/mo
+                    </h5>
+                </div>
 
-            <SelectedOptionsInfo 
-                styles={styles} 
-                infoPlan="Total (per month)"
-                valuePlan="+$12/mo"
-            />
+                <div className={styles.selectedoptions__container}>
+                    <h4 className={styles.selectedplan__info}>
+                        Larger storage
+                    </h4>
+                    <h5 className={styles.selectedplan__addons__value}>
+                        +$2/mo
+                    </h5>
+                </div>
+            </div>
 
-        </div>
+            <div className={styles.total__container}>
+                <h4 className={styles.selectedplan__info}>
+                    Total (per month)
+                </h4>
+                <h5 className={styles.selectedplan__addons__value}>
+                    +$12/mo
+                </h5>
+            </div>
+        </>
     )
 }
