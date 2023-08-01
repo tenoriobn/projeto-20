@@ -11,7 +11,12 @@
 
     padding: 1rem;
 
-    .container__cardInfo {
+    &:hover {
+        border-color: $hoverPurplish ;
+        cursor: pointer;
+    }
+
+    .container__card {
         .plan__name {
             @include font-styling($marineBlue, 1rem, 500);
 

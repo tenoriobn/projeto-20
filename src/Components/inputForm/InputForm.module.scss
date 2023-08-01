@@ -21,6 +21,10 @@
 
         padding: 0 .875rem;
 
+        &:focus {
+            border-color: $hoverPurplish;
+        }
+
         &::placeholder {
             @include font-styling($coolGray, 14px, 700);
         }

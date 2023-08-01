@@ -10,7 +10,12 @@
 
     padding: 1rem;
 
-    .addons__container__inputLabel {
+    &:hover {
+        border-color: $hoverPurplish;
+        cursor: pointer;
+    }
+
+    .addons__container {
         display: flex;
         gap: 1rem;
         align-items: center;
@@ -58,7 +63,7 @@
     .addons {
         padding: 20px 24px;
 
-        .addons__container__inputLabel {
+        .addons__container {
             .addons__text__container {
                 .addons__name {
                     font-size: 1rem;

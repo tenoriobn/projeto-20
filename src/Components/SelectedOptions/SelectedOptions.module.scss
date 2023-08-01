@@ -1,13 +1,13 @@
 @import 'styles/variables';
 
-.finishingup__selectedoptions {
+.finishingup {
     background-color: $alabaster;
     border-radius: .50rem;
     
     padding: 1.25rem 1rem;
     margin-bottom: 1.75rem;
 
-    .selectedoptions__container {
+    .finishingup__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -17,29 +17,36 @@
             margin-bottom: 0;
         }
 
-        .info__container {
-            .selectedplan {
+        .selected__container {
+            .plan {
                 @include font-styling($marineBlue, .875rem, 500);
                 margin-bottom: 4px;
             }
 
-            .selectedplan__change {
+            .change {
                 @include font-styling('', .875rem, 500);
                 color: $coolGray;
                 text-decoration: underline;
+
+                &:hover {
+                    font-weight: 700;
+                    color: $hoverPurplish;
+                    cursor: pointer;
+                }
             }
         }
 
         
-        .selectedplan__info, .selectedplan__addons__value, .selectedplan__plan__value {
+        .plan__info, .addons__value, .plan__value {
             @include font-styling('', .875rem, 500);
         }
         
-        .selectedplan__plan__value {
+        .plan__value {
             color: $marineBlue;
+            font-weight: 700;
         }
         
-        .selectedplan__addons__value {
+        .addons__value {
             color: $marineBlue;
         }
     }
@@ -56,30 +63,30 @@
     justify-content: space-between;
     padding: 0 1rem;
 
-    .selectedplan__info {
+    .plan__info {
         @include font-styling('', .875rem, 500);
     }
 
-    .selectedplan__addons__value {
+    .addons__value {
         @include font-styling($purplishBlue, 1rem, 700);
     }
 }
 
 @media screen and (min-width: 992px) {
-    .finishingup__selectedoptions {
+    .finishingup {
         padding: 1.25rem 1.5rem;
     
-        .selectedoptions__container {
+        .finishingup__container {
             margin-bottom: 1.5rem;
     
-            .info__container {
-                .selectedplan {
+            .selected__container {
+                .plan {
                     font-size: 1rem;
                     margin-bottom: 6px;
                 }
             }
 
-            .selectedplan__plan__value {
+            .plan__value {
                 font-size: 1rem;
             }
         }
@@ -92,7 +99,7 @@
     .total__container {
         padding: 0 1.5rem;
 
-        .selectedplan__addons__value {
+        .addons__value {
             font-size: 1.25rem;
         }
     }

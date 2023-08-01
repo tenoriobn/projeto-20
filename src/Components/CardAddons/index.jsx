@@ -4,7 +4,7 @@ import styles from './CardAddons.module.scss';
 export default function CardAddons( {addOnsName, addOnsDescription, addOnsValue} ) {
     return (
         <article className={styles.addons}>
-            <div className={styles.addons__container__inputLabel}>
+            <div className={styles.addons__container}>
                 <input type="checkbox" className={styles.addons__checkbox} id="" />
 
                 <div className={styles.addons__text__container}>
