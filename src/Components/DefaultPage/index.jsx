@@ -18,18 +18,18 @@ export default function DefaultPage() {
         Criar o botão `Go back` e estilizar, deixando na esquerda.***
     }
 
+    * Refatorar cada componente e estilização******
+        - Espaçamentos***
+        - Cores***
+        - Tamanhos***
+        - Nomeclatura***
+    
+    * Aplicar pseudo-classes `hover, active e etc...`***
+
+    * Corrigir background do `Finishing up` ***
+
     * Criar componente de `AGRADECIMENTO`
         - Estilizar o componente.
-
-    * Refatorar cada componente e estilização
-        - Espaçamentos
-        - Cores
-        - Tamanhos
-        - Nomeclatura
-    
-    * Aplicar pseudo-classes `hover, active e etc...`
-
-    * Corrigir background do `Finishing up`
     
     * Iniciar lógica de interação.
         - Observar a funcionalidades necessárias

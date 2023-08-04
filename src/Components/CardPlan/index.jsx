@@ -1,15 +1,21 @@
 import React from 'react';
-import styles from './CardPlan.module.scss'
+import styles from './CardPlan.module.scss';
+import plans from './plans.json';
+import Icons from './Icons';
 
-export default function CardPlan( {img, planName, planValue} ) {
+export default function CardPlan() {
     return (
-        <article className={styles.plan__card}>
-            <img src={img} alt="Arcade flat icon" className={styles.plan__card__img} />
+        <>
+            {plans.map((plan) => (
+                <article key={plan.planName} className={styles.plan__card}>
+                    <img src={Icons[plan.img]} alt={`${plan.planName} flat icon`} className={styles.plan__card__img} />
 
-            <div className={styles.container__card}>
-                <h4 className={styles.plan__name}>{planName}</h4>
-                <h5 className={styles.plan__value}>{planValue}</h5>
-            </div>
-        </article>
-    )
+                    <div className={styles.container__card}>
+                        <h4 className={styles.plan__name}>{plan.planName}</h4>
+                        <h5 className={styles.plan__value}>{plan.planValue}</h5>
+                    </div>
+                </article>
+            ))}
+        </>
+    );
 }

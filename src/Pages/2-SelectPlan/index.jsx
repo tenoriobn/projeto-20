@@ -2,9 +2,6 @@ import React from 'react';
 import styles from './SelectPlan.module.scss';
 import Heading from 'Components/Heading';
 import CardPlan from 'Components/CardPlan';
-import arcade from './icon-arcade.svg';
-import advanced from './icon-advanced.svg';
-import pro from './icon-pro.svg';
 import PlanPeriod from 'Components/PlanPeriod';
 
 export default function SelectPlan() {
@@ -16,23 +13,7 @@ export default function SelectPlan() {
             />
 
             <div className={styles.plan__card__container}>
-                <CardPlan
-                    img={arcade}
-                    planName="Arcade"
-                    planValue="$9/mo"
-                />
-
-                <CardPlan
-                    img={advanced}
-                    planName="Advanced"
-                    planValue="$12/mo"
-                />
-
-                <CardPlan
-                    img={pro}
-                    planName="Pro"
-                    planValue="$15/mo"
-                />
+                <CardPlan/>
             </div>
 
             <PlanPeriod />
@@ -40,3 +21,11 @@ export default function SelectPlan() {
         </section>
     )
 }
+
+
+/*
+Aqui o que tenho que fazer para tornar esse card dinâmico
+    - Nessa folha vou chamar apenas <CardPlan />
+    - O componente CardPlan vai mapear o arquivo .json e cria o card que irá gerar vários outros.
+    - Talvez o article e todo o conteúdo já existe vai dentro do mapeamente, com as respectivas propriedades.
+*/

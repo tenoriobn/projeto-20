@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './AppLayout.module.scss';
 
-
 import PersonalInfo from 'Pages/1-PersonalInfo';
 import SelectPlan from 'Pages/2-SelectPlan';
 import PickAddOns from 'Pages/3-PickAddOns';
@@ -12,8 +11,6 @@ import DefaultPage from 'Components/DefaultPage';
 import Button from 'Components/Button';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-
 
 export default function AppLayout() {
     return (
