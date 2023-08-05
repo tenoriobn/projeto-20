@@ -52,6 +52,7 @@
     }
 
     .line {
+        display: block;
         height: 1px;
         background-color: $lightGray;
         margin-bottom: .875rem;
