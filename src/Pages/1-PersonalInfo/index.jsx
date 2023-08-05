@@ -11,25 +11,8 @@ export default function PersonalInfo() {
                 paragraph="Please provide your name, email address, and phone number."
             />
 
-            <form action="" className={styles.form}>
-                <InputForm 
-                    required={true}
-                    label="Name"
-                    placeholder="e.g. Stephen King"
-                />
 
-                <InputForm 
-                    required={true}
-                    label="Email Address"
-                    placeholder="e.g. stephenking@lorem.com"
-                />
-
-                <InputForm 
-                    required={true}
-                    label="Phone Number"
-                    placeholder="e.g. +1 234 567 890"
-                />
-            </form>
+            <InputForm />
         </section>
     )
 }

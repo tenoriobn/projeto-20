@@ -5,9 +5,9 @@ import Icons from './Icons';
 
 export default function CardPlan() {
     return (
-        <>
+        <div className={styles.plan__card__container}>
             {plans.map((plan) => (
-                <article key={plan.planName} className={styles.plan__card}>
+                <article key={plan.id} className={styles.plan__card}>
                     <img src={Icons[plan.img]} alt={`${plan.planName} flat icon`} className={styles.plan__card__img} />
 
                     <div className={styles.container__card}>
@@ -16,6 +16,6 @@ export default function CardPlan() {
                     </div>
                 </article>
             ))}
-        </>
+        </div>
     );
 }

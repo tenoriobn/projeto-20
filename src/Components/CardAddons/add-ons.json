@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Online service",
+        "description": "Access to multiplayer games",
+        "value": "+$1/mo"
+    },
+    {
+        "id": 2,
+        "name": "Larger storage",
+        "description": "Extra 1TB of cloud save",
+        "value": "+$2/mo"
+    },
+    {
+        "id": 3,
+        "name": "Customizable profile",
+        "description": "Custom theme on your profile",
+        "value": "+$2/mo"
+    }
+]

@@ -1,19 +1,1 @@
 @import "styles/variables";
-
-.container__personalInfo {
-    .form {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-}
-
-@media screen and (min-width:992px) {
-    .container__personalInfo {
-        .form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-    }
-}

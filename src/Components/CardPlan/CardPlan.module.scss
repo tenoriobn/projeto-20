@@ -1,44 +1,55 @@
 @import "styles/variables";
 
-.plan__card {
+.plan__card__container {
     display: flex;
-    align-items: center;
-
-    border: 1px solid $lightGray;
-    border-radius: .5rem;
-
-    gap: .875rem;
-
-    padding: 1rem;
-
-    &:hover {
-        border-color: $hoverPurplish ;
-        cursor: pointer;
-    }
-
-    .container__card {
-        .plan__name {
-            @include font-styling($marineBlue, 1rem, 500);
-
-            margin-bottom: .375rem;
+    flex-direction: column;
+    gap: .75rem;
+    
+    .plan__card {
+        display: flex;
+        align-items: center;
+    
+        border: 1px solid $lightGray;
+        border-radius: .5rem;
+    
+        gap: .875rem;
+    
+        padding: 1rem;
+    
+        &:hover {
+            border-color: $hoverPurplish ;
+            cursor: pointer;
         }
-
-        .plan__value {
-            @include font-styling($coolGray, .875rem, 500);
+    
+        .container__card {
+            .plan__name {
+                @include font-styling($marineBlue, 1rem, 500);
+    
+                margin-bottom: .375rem;
+            }
+    
+            .plan__value {
+                @include font-styling($coolGray, .875rem, 500);
+            }
         }
     }
 }
 
 @media screen and (min-width: 768px) {
-    .plan__card {
-        box-sizing: border-box;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        
-        gap: 40px;
+    .plan__card__container {
+        flex-direction: row;
+        justify-content: space-between;
 
-        max-width: 136px;
-        width: 100%;
+        .plan__card {
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            
+            gap: 40px;
+    
+            max-width: 136px;
+            width: 100%;
+        }
     }
 }

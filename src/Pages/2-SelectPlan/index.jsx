@@ -12,9 +12,7 @@ export default function SelectPlan() {
                 paragraph="You have the option of monthly or yearly billing."
             />
 
-            <div className={styles.plan__card__container}>
-                <CardPlan/>
-            </div>
+            <CardPlan/>
 
             <PlanPeriod />
             
