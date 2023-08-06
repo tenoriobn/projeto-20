@@ -3,7 +3,7 @@ import styles from './CardPlan.module.scss';
 import plans from './plans.json';
 import Icons from './Icons';
 
-export default function CardPlan() {
+export default function CardPlan({ isYearly }) {
     return (
         <div className={styles.plan__card__container}>
             {plans.map((plan) => (
@@ -12,7 +12,11 @@ export default function CardPlan() {
 
                     <div className={styles.container__card}>
                         <h4 className={styles.plan__name}>{plan.planName}</h4>
-                        <h5 className={styles.plan__value}>{plan.planValue}</h5>
+                        <h5 className={styles.plan__value}>$
+                            {isYearly ? plan.planValue * 10 + '/yr' : plan.planValue + '/mo'}
+                        </h5>
+
+                        {isYearly ? <p className={styles.plan__discount}>2 months free</p> : ''}
                     </div>
                 </article>
             ))}

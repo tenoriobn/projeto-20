@@ -1,21 +1,21 @@
-import React from 'react';
-import styles from './SelectPlan.module.scss';
+import React, { useState } from 'react';
 import Heading from 'Components/Heading';
 import CardPlan from 'Components/CardPlan';
 import PlanPeriod from 'Components/PlanPeriod';
 
 export default function SelectPlan() {
+    const [isYearly, setIsYearly] = useState(false);
+
     return (
-        <section className="">
+        <section>
             <Heading 
                 title="Select your plan"
                 paragraph="You have the option of monthly or yearly billing."
             />
 
-            <CardPlan/>
+            <CardPlan isYearly={isYearly} />
 
-            <PlanPeriod />
-            
+            <PlanPeriod isYearly={isYearly} setIsYearly={setIsYearly} />
         </section>
     )
 }

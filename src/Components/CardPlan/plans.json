@@ -3,18 +3,18 @@
         "id": 1,
         "img": "icon-arcade.svg",
         "planName": "Arcade",
-        "planValue": "$9/mo"
+        "planValue": 9
     },
     {
         "id": 2,
         "img": "icon-advanced.svg",
         "planName": "Advanced",
-        "planValue": "$12/mo"
+        "planValue": 12
     },
     {
         "id": 3,
         "img": "icon-pro.svg",
         "planName": "Pro",
-        "planValue": "$15/mo"
+        "planValue": 15
     }
 ]

@@ -41,6 +41,7 @@
             top: .5px;
             left: 6px;
             cursor: pointer;
+            transition: .3s;
 
             &:checked {
                 background-color: $white;
