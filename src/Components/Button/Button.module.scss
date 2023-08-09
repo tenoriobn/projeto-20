@@ -20,13 +20,17 @@
         padding: 1rem;
     
         .button {
-            appearance: none;
-            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             border-radius: .25rem;
     
             cursor: pointer;
         
             @include font-styling($white, .875rem, 700);
+            text-decoration: none;
+            text-align: center;
         
             max-width: 97px;
             height: 40px;
@@ -42,16 +46,23 @@
         }
     
         .goback {
-            appearance: none;
-            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             background: none;
             cursor: pointer;
             @include font-styling($coolGray, .875rem, 700);
+            text-decoration: none;
         
             &:hover {
                 color: $marineBlue;
             }
         }
+        
+        // .goback_none {
+        //     display: none;
+        // }
     }
 }
 
