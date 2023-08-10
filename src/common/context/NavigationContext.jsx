@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
 export const NavigationContext = createContext();
-NavigationContext.displayName = "Pagamento";
+NavigationContext.displayName = "Navigation";
 
 export const NavigationProvider = ({ children }) => {
     const [currentPageIndex, setCurrentPageIndex] = useState(0);

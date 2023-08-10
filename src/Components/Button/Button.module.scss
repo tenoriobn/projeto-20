@@ -46,6 +46,15 @@
                 background-color: $HoverMarineBlue;
             }
         }
+
+        .confirm {
+            background-color: $purplishBlue;
+            margin-left: auto;
+    
+            &:hover {
+                background-color: $hoverPurplish;
+            }
+        }
     
         .goback {
             display: flex;
