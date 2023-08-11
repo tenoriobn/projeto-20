@@ -14,7 +14,7 @@ const validationInput = yup.object().shape({
         .required(customMessage)
         .min(3, "Minimum 3 characters")
         .max(80, "Maximum 80 characters")
-        .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ^~,\s]+$/, "Enter only letters, ^, ~, and ,"),
+        .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ^~,\s]+$/, "Enter only letters"),
     EmailAddress: 
         yup.string()
         .required(customMessage)
@@ -25,7 +25,8 @@ const validationInput = yup.object().shape({
         yup.string()
         .required(customMessage)
         .min(10, "Minimum 10 characters")
-        .max(16, "Maximum 16 characters"),
+        .max(16, "Maximum 16 characters")
+        .matches(/^[\d+()\s-]*$/, "Enter a valid phone number"),
 })
 
 export default function InputForm() {

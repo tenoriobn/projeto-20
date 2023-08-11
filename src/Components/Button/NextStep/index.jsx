@@ -1,6 +1,6 @@
-import { useNavigation } from 'common/context/NavigationContext'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigation } from 'common/context/NavigationContext';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NextStep( {styles, nextstep} ) {
     const { currentPageIndex, pages, goToStep } = useNavigation();
