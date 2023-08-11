@@ -39,16 +39,18 @@ export default function InputForm() {
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             {inputs.map((input) => (
                 <div key={input.id} className={styles.container__input}>
-                    <label className={styles.label}>{input.label}</label>
+                    <div className={styles.container__label}>
+                        <label className={styles.label}>{input.label}</label>
+                        <p className={styles.error__message}>{errors[input.inputName]?.message}</p>
+                    </div>
                     <input 
                         placeholder={input.placeholder} 
                         type="text" 
-                        className={styles.input}
+                        className={`${styles.input} ${errors[input.inputName] ? styles.input__error : ""}`}
                         name={input.inputName}
                         {...register(`[${input.inputName}]`)}
                     />
 
-                    <p className="error-message">{errors[input.inputName]?.message}</p>
                 </div>
             ))}
             

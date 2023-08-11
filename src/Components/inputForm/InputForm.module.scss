@@ -8,10 +8,20 @@
     .container__input {
         display: flex;
         flex-direction: column;
-    
-        .label {
-            @include font-styling($marineBlue, .75rem, 500);
+        
+        .container__label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: .25rem;
+
+            .label {
+                @include font-styling($marineBlue, .75rem, 500);
+            }
+
+            .error__message {
+                @include font-styling($strawberryRed, .75rem, 700)
+            }
         }
     
         .input {
@@ -21,6 +31,7 @@
             box-sizing: border-box;
     
             @include font-styling($marineBlue, 14px, 700);
+            cursor: pointer;
     
             height: 40px;
     
@@ -34,6 +45,10 @@
                 @include font-styling($coolGray, 14px, 700);
             }
         }
+
+        .input__error {
+            border-color: red!important;
+        }
     }
 }
 
@@ -45,9 +60,16 @@
         gap: 1.5rem;
 
         .container__input {
-            .label {
-                font-size: .875rem;
+            .container__label {
                 margin-bottom: .5rem;
+
+                .label {
+                    font-size: .875rem;
+                }
+
+                .error__message {
+                    font-size: .875rem;
+                }
             }
         
             .input {
