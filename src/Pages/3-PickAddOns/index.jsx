@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './PickAddOns.module.scss';
 import Heading from 'Components/Heading';
 import CardAddons from 'Components/CardAddons';
 

@@ -3,18 +3,21 @@
         "id": 1,
         "label": "Name",
         "placeholder": "e.g. Stephen King",
-        "required": true
+        "required": true,
+        "inputName": "Name"
     },
     {
         "id": 2,
         "label": "Email Address",
         "placeholder": "e.g. stephenking@lorem.com",
-        "required": true
+        "required": true,
+        "inputName": "EmailAddress"
     },
     {
         "id": 3,
         "label": "Phone Number",
         "placeholder": "e.g. +1 234 567 890",
-        "required": true
+        "required": true,
+        "inputName": "PhoneNumber"
     }
 ]
