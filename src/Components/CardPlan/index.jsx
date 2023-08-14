@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './CardPlan.module.scss';
 import plans from './plans.json';
 import Icons from './Icons';
 
 export default function CardPlan({ isYearly }) {
+    const [activePlan, setActivePlan] = useState(null);
+
+    const selectedPlan = (planId) => {
+        setActivePlan(planId);
+    }
+
     return (
         <div className={styles.plan__card__container}>
             {plans.map((plan) => (
-                <article key={plan.id} className={styles.plan__card}>
+                <article 
+                    key={plan.id} 
+                    className={`${styles.plan__card} ${activePlan === plan.id ? styles.card_active : ''}`}
+                    onClick={() => selectedPlan(plan.id)}
+                >
+                    
                     <img src={Icons[plan.img]} alt={`${plan.planName} flat icon`} className={styles.plan__card__img} />
 
                     <div className={styles.container__card}>

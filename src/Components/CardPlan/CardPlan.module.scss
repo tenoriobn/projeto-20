@@ -17,7 +17,7 @@
         padding: 1rem;
     
         &:hover {
-            border-color: $hoverPurplish ;
+            border-color: $hoverPurplish;
             cursor: pointer;
         }
     
@@ -36,6 +36,11 @@
                 @include font-styling($marineBlue, .75rem, 400);
             }
         }
+
+    }
+
+    .card_active {
+        border-color: $hoverPurplish;
     }
 }
 
