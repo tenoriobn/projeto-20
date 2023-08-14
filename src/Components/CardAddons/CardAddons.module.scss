@@ -65,6 +65,10 @@
             @include font-styling($purplishBlue, .75rem, 500);
         }
     }
+
+    .addons_active {
+        border-color: $hoverPurplish;
+    }
 }
 
 

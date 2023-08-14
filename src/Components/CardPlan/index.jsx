@@ -4,7 +4,7 @@ import plans from './plans.json';
 import Icons from './Icons';
 
 export default function CardPlan({ isYearly }) {
-    const [activePlan, setActivePlan] = useState(null);
+    const [activePlan, setActivePlan] = useState(1);
 
     const selectedPlan = (planId) => {
         setActivePlan(planId);
@@ -15,7 +15,7 @@ export default function CardPlan({ isYearly }) {
             {plans.map((plan) => (
                 <article 
                     key={plan.id} 
-                    className={`${styles.plan__card} ${activePlan === plan.id ? styles.card_active : ''}`}
+                    className={`${styles.plan__card} ${activePlan === plan.id ? styles.plan_active : ''}`}
                     onClick={() => selectedPlan(plan.id)}
                 >
                     
