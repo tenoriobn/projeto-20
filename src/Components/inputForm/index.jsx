@@ -41,7 +41,11 @@ export default function InputForm() {
 
     const onSubmit = data => {
         console.log(data);
-        setFormData(data)
+        
+        setFormData(prevData => ({
+            ...prevData,
+            ...data
+        }));
     }
 
     return (
@@ -61,7 +65,7 @@ export default function InputForm() {
                     />
 
                 </div>
-            ))}
+            ))};
             
             <input type="submit" />
         </form>
