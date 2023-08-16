@@ -5,6 +5,7 @@ import inputs from './form.json';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { useFormContext } from 'common/context/PersonalContext';
 
 const customMessage = "This field is required";
 
@@ -31,10 +32,17 @@ const validationInput = yup.object().shape({
 
 export default function InputForm() {
 
+    const { formData, setFormData,} = useFormContext();
+
     const { register, handleSubmit, formState:{ errors } } = useForm({
-        resolver: yupResolver(validationInput)
+        resolver: yupResolver(validationInput),
+        defaultValues: formData,
     });
-    const onSubmit = data => console.log(data)
+
+    const onSubmit = data => {
+        console.log(data);
+        setFormData(data)
+    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
