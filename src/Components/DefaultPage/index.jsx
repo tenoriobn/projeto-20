@@ -1,12 +1,24 @@
 import React from 'react';
 import styles from './DefaultPage.module.scss';
 import { Outlet } from 'react-router-dom';
+import { NavigationProvider } from 'common/context/NavigationContext';
+import Steps from 'Components/Steps';
+import { FormProvider } from 'common/context/PersonalContext';
+import Button from 'Components/Button';
 
 export default function DefaultPage() {
     return (
-        <main className={styles.main}>
-            <Outlet />
-        </main>
+        <NavigationProvider>
+            <Steps />
+
+            <FormProvider>
+                <main className={styles.main}>
+                    <Outlet />
+                </main>
+            </FormProvider>
+
+            <Button nextstep="nextstep" />
+        </NavigationProvider>
     )
 }
 

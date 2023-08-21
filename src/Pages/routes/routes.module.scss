@@ -2,7 +2,7 @@
 @import "styles/reset";
 @import "styles/variables";
 
-.applayout {
+.approutes {
     @include font-styling($coolGray, 1rem, 400);
     font-family: $ubuntu;
     background-color: $magnolia;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (min-width: 992px) {
-    .applayout {
+    .approutes {
         /* Controlando Header, main e button */
         display: grid;
         grid-template-columns: auto 1fr;
@@ -25,18 +25,18 @@
             "header button"
         ;
 
-        /* Deixando applayout centralizado no body */
+        /* Deixando approutes centralizado no body */
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
-        /* Cor de fundo do applayout para destacar do body */
+        /* Cor de fundo do approutes para destacar do body */
         background-color: white;
         border-radius: 1rem;
         box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-        /* Tamanho máximo do applayout */
+        /* Tamanho máximo do approutes */
         max-width: 940px;
         max-height: 600px;
         width: 100%;
