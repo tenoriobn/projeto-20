@@ -5,6 +5,7 @@ import { NavigationProvider } from 'common/context/NavigationContext';
 import Steps from 'Components/Steps';
 import { FormProvider } from 'common/context/PersonalContext';
 import Button from 'Components/Button';
+import { PlanProvider } from 'common/context/PlanContext';
 
 export default function DefaultPage() {
     return (
@@ -12,9 +13,11 @@ export default function DefaultPage() {
             <Steps />
 
             <FormProvider>
-                <main className={styles.main}>
-                    <Outlet />
-                </main>
+                <PlanProvider>
+                    <main className={styles.main}>
+                        <Outlet />
+                    </main>
+                </PlanProvider>
             </FormProvider>
 
             <Button nextstep="nextstep" />

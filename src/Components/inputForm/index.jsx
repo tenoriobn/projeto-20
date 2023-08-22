@@ -32,7 +32,7 @@ const validationInput = yup.object().shape({
 
 export default function InputForm() {
 
-    const { formData, setFormData,} = useFormContext();
+    const { formData, setFormData } = useFormContext();
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(validationInput),
