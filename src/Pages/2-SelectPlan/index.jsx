@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
 import Heading from 'Components/Heading';
 import CardPlan from 'Components/CardPlan';
 import PlanPeriod from 'Components/PlanPeriod';
 
 export default function SelectPlan() {
-    const [isYearly, setIsYearly] = useState(false);
-
     return (
         <section>
             <Heading 
@@ -13,9 +10,9 @@ export default function SelectPlan() {
                 paragraph="You have the option of monthly or yearly billing."
             />
 
-            <CardPlan isYearly={isYearly} />
+            <CardPlan />
 
-            <PlanPeriod isYearly={isYearly} setIsYearly={setIsYearly} />
+            <PlanPeriod />
         </section>
     )
 }
