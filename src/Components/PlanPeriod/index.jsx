@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from './PlanPeriod.module.scss'
+import { usePlanContext } from 'common/context/PlanContext';
 
-export default function PlanPeriod({ isYearly, setIsYearly }) {
+export default function PlanPeriod() {
+    const { isYearly, setIsYearly } = usePlanContext();
+
     return (
         <div className={styles.plan__period}>
-            <h4 className={`${styles.period} ${isYearly ? '' : styles.select}`}>Monthly</h4>
+            <h4 className={`${styles.period} ${!isYearly ? styles.select : ''}`} onClick={() => setIsYearly(false)}>Monthly</h4>
 
             <label className={styles.period__select}>
                 <input 
@@ -15,7 +18,7 @@ export default function PlanPeriod({ isYearly, setIsYearly }) {
                 />
             </label>
             
-            <h4 className={`${styles.period} ${isYearly ? styles.select : ''}`}>Yearly</h4>
+            <h4 className={`${styles.period} ${isYearly ? styles.select : ''}`} onClick={() => setIsYearly(true)}>Yearly</h4>
         </div>
     )
 }

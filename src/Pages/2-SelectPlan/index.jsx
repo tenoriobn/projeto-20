@@ -19,8 +19,7 @@ export default function SelectPlan() {
 
 
 /*
-Aqui o que tenho que fazer para tornar esse card dinâmico
-    - Nessa folha vou chamar apenas <CardPlan />
-    - O componente CardPlan vai mapear o arquivo .json e cria o card que irá gerar vários outros.
-    - Talvez o article e todo o conteúdo já existe vai dentro do mapeamente, com as respectivas propriedades.
+Fazer teste de mesa e definir o algoritmo a ser seguido para
+1- Ao alternar de `mensal` para `anual` o `planValue` seja atualizado automaticamente.
+2- O `planValue` deve atualizar caso seja selecionado outro card, armazenando tanto se for anual quanto mensal.
 */

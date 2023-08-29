@@ -4,59 +4,64 @@ import plans from './plans.json';
 import Icons from './Icons';
 import { usePlanContext } from 'common/context/PlanContext';
 
-export default function CardPlan({ isYearly }) {
-    const { activePlan, setActivePlan } = usePlanContext();
-
-    const formatPlanValue = (value, isYearly) => {
-        return isYearly ? `${value * 10}/yr` : `${value}/mo`;
-    }
+export default function CardPlan() {
+    const { activePlan, setActivePlan, isYearly } = usePlanContext();
 
     const selectedPlan = (plan) => {
-        setActivePlan(plan);
+        const updatedPlan = { ...plan }; // Clone do plano para não modificar o objeto original
 
-        console.log(activePlan)
+        if (isYearly) {
+            updatedPlan.planValue = plan.planValue * 10; // Atualiza o valor para o valor anual
+        }
+
+        setActivePlan(updatedPlan);
     }
 
-    // Aqui inicia somente com o `id` pois estou fazendo `plans[0].id`.
-    // Enquanto em cima mostra outras propriedades, pois estou enviando `setActivePlan(plan)` o `plan` inteiro
-    // Então o desafio é uma forma de definir o primeiro card como plano selecionado inicial, mas acessar outras
-        // propriedades que não seja somente o id.
     useEffect(() => {
-        if (!activePlan && plans.length > 0) {
-            setActivePlan(plans[0].id);
+        if (activePlan) {
+            const originalPlan = plans.find(item => item.id === activePlan.id);
+
+            const updatedPlan = {
+                ...activePlan,
+                planValue: !isYearly ? originalPlan.planValue : originalPlan.planValue * 10
+            };
+
+            setActivePlan(updatedPlan);
         }
         // eslint-disable-next-line
-    }, [activePlan, plans]);
+    }, [isYearly]);
+
+    useEffect(() => {
+        if (!activePlan && plans.length > 0) {
+            setActivePlan(plans[0]);
+        }
+        // eslint-disable-next-line
+    }, [activePlan]);
 
     return (
         <div className={styles.plan__card__container}>
-            {plans.map((plan) => (
-                <article 
-                    key={plan.id} 
-                    className={`${styles.plan__card} ${activePlan === plan ? styles.plan_active : ''}`}
-                    onClick={() => selectedPlan(plan)}
-                >
-                    
-                    <img src={Icons[plan.img]} alt={`${plan.planName} flat icon`} className={styles.plan__card__img} />
+            {plans.map((plan) => {
+                const isActivePlan = activePlan && activePlan.id === plan.id;
 
-                    <div className={styles.container__card}>
-                        <h4 className={styles.plan__name}>{plan.planName}</h4>
-                        <h5 className={styles.plan__value}>$
-                            {formatPlanValue(plan.planValue, isYearly)}
-                        </h5>
+                return (
+                    <article 
+                        key={plan.id} 
+                        className={`${styles.plan__card} ${isActivePlan ? styles.plan_active : ''}`}
+                        onClick={() => selectedPlan(plan)}
+                    >
+                        
+                        <img src={Icons[plan.img]} alt={`${plan.planName} flat icon`} className={styles.plan__card__img} />
 
-                        {isYearly ? <p className={styles.plan__discount}>2 months free</p> : ''}
-                    </div>
-                </article>
-            ))}
+                        <div className={styles.container__card}>
+                            <h4 className={styles.plan__name}>{plan.planName}</h4>
+                            <h5 className={styles.plan__value}>
+                            {!isYearly ? `$${plan.planValue}/mo` : `$${plan.planValue * 10}/yr`}
+                            </h5>
+                            {isYearly ? <p className={styles.plan__discount}>2 months free</p> : ''}
+                        </div>
+                    </article>
+                )
+            })}
         </div>
     );
 }
-
-/*
-
-Após arrumar o problema com o plano padrão inicial, obtendo as propriedades:
-1- Fazer com que o valor do periodo escolhido seja armazenado no state do context.
-2- Fazer com que o periodo continue selecionado após ir para outros steps e voltar (aqui é context)
-
-*/

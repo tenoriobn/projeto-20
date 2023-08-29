@@ -15,6 +15,7 @@
 
     .period {
         @include font-styling($coolGray, .875rem, 700);
+        cursor: pointer;
     }
 
     .select {

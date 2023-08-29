@@ -65,7 +65,7 @@ export default function InputForm() {
                     />
 
                 </div>
-            ))};
+            ))}
             
             <input type="submit" />
         </form>

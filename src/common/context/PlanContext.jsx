@@ -5,19 +5,22 @@ PlanContext.displayName = "Plan";
 
 export function PlanProvider({ children }) {
     const [activePlan, setActivePlan] = useState(null);
+    const [isYearly, setIsYearly] = useState(false);
 
     return (
-        <PlanContext.Provider value={{ activePlan, setActivePlan }}>
+        <PlanContext.Provider value={{ activePlan, setActivePlan, isYearly, setIsYearly }}>
             {children}
         </PlanContext.Provider>
     );
 };
 
 export const usePlanContext = () => {
-    const { activePlan, setActivePlan } = useContext(PlanContext);
+    const { activePlan, setActivePlan, isYearly, setIsYearly } = useContext(PlanContext);
 
     return {
         activePlan,
         setActivePlan,
+        isYearly,
+        setIsYearly,
     };
 };
