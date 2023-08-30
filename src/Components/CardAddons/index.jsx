@@ -10,7 +10,11 @@ export default function CardAddons() {
             setSelectedAddons(prevSelected => prevSelected.filter(addon => addon.id !== addonId));
         } else {
             const selectedAddon = addons.find(addon => addon.id === addonId);
-            setSelectedAddons(prevSelected => [...prevSelected, selectedAddon]);
+
+            setSelectedAddons(prevSelected => {
+                const updatedSelected = [...prevSelected, selectedAddon];
+                return updatedSelected.sort((a, b) => a.id - b.id);
+            });
         }
     };
 
@@ -19,7 +23,6 @@ export default function CardAddons() {
             {addons.map((addon) => (
                 <label 
                     key={addon.id} 
-                    // className={styles.addons}
                     className={`
                         ${styles.addons} 
                         ${selectedAddons.some(selected => selected.id === addon.id) ? styles.addons_active : ''}
