@@ -4,7 +4,7 @@ const AddonsContext = createContext();
 AddonsContext.displayName = "Addons";
 
 export function AddonsProvider({ children }) {
-    const [selectedAddons, setSelectedAddons] = useState(null);
+    const [selectedAddons, setSelectedAddons] = useState([]);
 
     return (
         <AddonsContext.Provider value={ { selectedAddons, setSelectedAddons } }>

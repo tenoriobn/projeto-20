@@ -5,17 +5,32 @@ import addons from './add-ons.json'
 export default function CardAddons() {
     const { selectedAddons, setSelectedAddons } = useAddonsContext();
 
+    const handleAddonToggle = (addonId) => {
+        if (selectedAddons.some(addon => addon.id === addonId)) {
+            setSelectedAddons(prevSelected => prevSelected.filter(addon => addon.id !== addonId));
+        } else {
+            const selectedAddon = addons.find(addon => addon.id === addonId);
+            setSelectedAddons(prevSelected => [...prevSelected, selectedAddon]);
+        }
+    };
+
     return (
         <div className={styles.addons__card__container}>
             {addons.map((addon) => (
-                <article 
+                <label 
                     key={addon.id} 
-                    className={styles.addons}
+                    // className={styles.addons}
+                    className={`
+                        ${styles.addons} 
+                        ${selectedAddons.some(selected => selected.id === addon.id) ? styles.addons_active : ''}
+                    `}
                 >
                     <div className={styles.addons__container}>
                         <input 
                             type="checkbox" 
                             className={styles.addons__checkbox} 
+                            checked={selectedAddons.some(selected => selected.id === addon.id)}
+                            onChange={() => handleAddonToggle(addon.id)}
                         />
 
                         <div className={styles.addons__text__container}>
@@ -25,7 +40,7 @@ export default function CardAddons() {
                     </div>
 
                     <h5 className={styles.addons__value}>{addon.value}</h5>
-                </article>
+                </label>
             ))}
         </div>
     )
