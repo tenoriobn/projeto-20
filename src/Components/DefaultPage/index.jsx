@@ -6,6 +6,7 @@ import Steps from 'Components/Steps';
 import { FormProvider } from 'common/context/PersonalContext';
 import Button from 'Components/Button';
 import { PlanProvider } from 'common/context/PlanContext';
+import { AddonsProvider } from 'common/context/AddonsContext';
 
 export default function DefaultPage() {
     return (
@@ -14,9 +15,11 @@ export default function DefaultPage() {
 
             <FormProvider>
                 <PlanProvider>
-                    <main className={styles.main}>
-                        <Outlet />
-                    </main>
+                    <AddonsProvider>
+                        <main className={styles.main}>
+                            <Outlet />
+                        </main>
+                    </AddonsProvider>
                 </PlanProvider>
             </FormProvider>
 
