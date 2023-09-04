@@ -3,18 +3,18 @@
         "id": 1,
         "name": "Online service",
         "description": "Access to multiplayer games",
-        "value": "+$1/mo"
+        "value": 1
     },
     {
         "id": 2,
         "name": "Larger storage",
         "description": "Extra 1TB of cloud save",
-        "value": "+$2/mo"
+        "value": 2
     },
     {
         "id": 3,
         "name": "Customizable profile",
         "description": "Custom theme on your profile",
-        "value": "+$2/mo"
+        "value": 2
     }
 ]

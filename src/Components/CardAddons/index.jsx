@@ -1,18 +1,22 @@
 import { useAddonsContext } from 'common/context/AddonsContext';
 import styles from './CardAddons.module.scss';
 import addons from './add-ons.json'
+import { usePlanContext } from 'common/context/PlanContext';
 
 export default function CardAddons() {
     const { selectedAddons, setSelectedAddons } = useAddonsContext();
+    const { isYearly } = usePlanContext();
 
     const handleAddonToggle = (addonId) => {
+        const selectedAddon = addons.find(addon => addon.id === addonId);
+        
+        const updatedValue = isYearly ? selectedAddon.value * 10 : selectedAddon.value;
+        
         if (selectedAddons.some(addon => addon.id === addonId)) {
             setSelectedAddons(prevSelected => prevSelected.filter(addon => addon.id !== addonId));
         } else {
-            const selectedAddon = addons.find(addon => addon.id === addonId);
-
             setSelectedAddons(prevSelected => {
-                const updatedSelected = [...prevSelected, selectedAddon];
+                const updatedSelected = [...prevSelected, { ...selectedAddon, value: updatedValue }];
                 return updatedSelected.sort((a, b) => a.id - b.id);
             });
         }
@@ -42,7 +46,9 @@ export default function CardAddons() {
                         </div>
                     </div>
 
-                    <h5 className={styles.addons__value}>{addon.value}</h5>
+                    <h5 className={styles.addons__value}>
+                        +${isYearly ? `${addon.value * 10}/yr` : `${addon.value}/mo`}
+                    </h5>
                 </label>
             ))}
         </div>
@@ -51,9 +57,6 @@ export default function CardAddons() {
 
 
 /*
-1- Ao dar `checked` no input pegar o `Name, description e value` e armazenar no state unchecked remove do state
-    - Criar um context para guardar os checked realizado sem perder ao ir para outro step
-    - Criar o state no context para que o state guarde os dados
-    - Criar condição para adicionar o item e se o item já estiver adicionado remove-lo.
-
+    Fazer com que o `value` do state seja atualizado automaticamente
+    sem a necessidade de ter que clicar no input para atualizar valor mensal para anual.
 */
