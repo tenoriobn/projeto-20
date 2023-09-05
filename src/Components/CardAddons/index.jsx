@@ -2,6 +2,7 @@ import { useAddonsContext } from 'common/context/AddonsContext';
 import styles from './CardAddons.module.scss';
 import addons from './add-ons.json'
 import { usePlanContext } from 'common/context/PlanContext';
+import { useEffect } from 'react';
 
 export default function CardAddons() {
     const { selectedAddons, setSelectedAddons } = useAddonsContext();
@@ -21,6 +22,24 @@ export default function CardAddons() {
             });
         }
     };
+
+    useEffect(() => {
+        if (selectedAddons.length > 0) {
+            // Mapeie a lista de addons selecionados e atualize seus valores com base em isYearly
+            const updatedAddons = selectedAddons.map(addon => {
+                const originalAddon = addons.find(item => item.id === addon.id);
+    
+                return {
+                    ...addon,
+                    value: !isYearly ? originalAddon.value : originalAddon.value * 10
+                };
+            });
+    
+            console.log(updatedAddons)
+            setSelectedAddons(updatedAddons);
+        }
+        // eslint-disable-next-line
+    }, [isYearly]);
 
     return (
         <div className={styles.addons__card__container}>
