@@ -12,10 +12,17 @@ export default function SelectedOptions() {
     const periodCurrency = isYearly ? '/yr' : '/mo';
 
     const navigate = useNavigate();
-
     const changePlan = () => {
         navigate('/selectplan');
     };
+
+    const totalAddonsValue = selectedAddons.reduce((accumulator, addon) => {
+        const addonValue = parseFloat(addon.value);
+
+        return accumulator + addonValue;
+    }, 0);
+
+    const totalValue = totalAddonsValue + parseFloat(activePlan.planValue);
 
     return (
         <>
@@ -40,22 +47,14 @@ export default function SelectedOptions() {
                     <article key={addon.id} className={styles.finishingup__container}>
                         <h4 className={styles.plan__info}>{addon.name}</h4>
                         <h5 className={styles.addons__value}>+${addon.value}{periodCurrency}</h5>
-
-
                     </article>
                 ))}
             </div>
 
             <article className={styles.total__container}>
                 <h4 className={styles.plan__info}>Total (per {totalPeriod})</h4>
-                <h5 className={styles.addons__value}>+$12/mo</h5>
+                <h5 className={styles.addons__value}>{isYearly ? '' : '+'}${totalValue}{periodCurrency}</h5>
             </article>
         </>
     )
 }
-
-
-/*
-    Realizar soma entre valor dos `Addons` adicionados e valor do plano escolhido
-
-*/

@@ -34,8 +34,7 @@ export default function CardAddons() {
                     value: !isYearly ? originalAddon.value : originalAddon.value * 10
                 };
             });
-    
-            console.log(updatedAddons)
+            
             setSelectedAddons(updatedAddons);
         }
         // eslint-disable-next-line
