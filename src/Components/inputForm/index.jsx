@@ -31,25 +31,33 @@ const validationInput = yup.object().shape({
 })
 
 export default function InputForm() {
-
     const { formData, setFormData } = useFormContext();
 
-    const { register, handleSubmit, formState:{ errors } } = useForm({
+    const {
+        register,
+        setValue,
+        formState: { errors },
+        trigger,
+    } = useForm({
         resolver: yupResolver(validationInput),
         defaultValues: formData,
     });
 
-    const onSubmit = data => {
-        console.log(data);
-        
-        setFormData(prevData => ({
-            ...prevData,
-            ...data
-        }));
-    }
+    const updateFormData = async (fieldName, value) => {
+        const isValid = await trigger(fieldName);
+
+        if (isValid) {
+            setValue(fieldName, value, { shouldValidate: true });
+            setFormData((prevData) => ({
+                ...prevData,
+                [fieldName]: value,
+            }));
+        }
+
+    };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <form className={styles.form}>
             {inputs.map((input) => (
                 <div key={input.id} className={styles.container__input}>
                     <div className={styles.container__label}>
@@ -62,12 +70,12 @@ export default function InputForm() {
                         className={`${styles.input} ${errors[input.inputName] ? styles.input__error : ""}`}
                         name={input.inputName}
                         {...register(`[${input.inputName}]`)}
+                        onBlur={(e) => updateFormData(input.inputName, e.target.value)} // Atualizamos o valor
                     />
 
                 </div>
             ))}
             
-            <input type="submit" />
         </form>
     )
 }

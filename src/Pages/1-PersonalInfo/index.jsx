@@ -15,3 +15,14 @@ export default function PersonalInfo() {
         </section>
     )
 }
+
+/*
+    - Fazer com que o botão `Next Step` envie os dados preenchidos no formulário para o state `formData`
+
+    - Corrigir bug do botão `Next Step` ao dar F5 em `step` posteriores ao 1
+        ao dar f5, o botão `Go Back` some o `Next Step` quando acionado volta um `step`
+
+    - Fazer com que ao dar F5, volte para o step inicial.
+    
+    - Fazer com que só seja possível avançar o `step` conforme preenchido
+*/
