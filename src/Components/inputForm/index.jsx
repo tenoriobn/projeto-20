@@ -5,7 +5,7 @@ import inputs from './form.json';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useFormContext } from 'common/context/PersonalContext';
+import { useFormContext } from 'common/context/FormContext';
 
 const customMessage = "This field is required";
 

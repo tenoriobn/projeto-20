@@ -1,11 +1,21 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export const NavigationContext = createContext();
 NavigationContext.displayName = "Navigation";
 
 export const NavigationProvider = ({ children }) => {
-    const [currentPageIndex, setCurrentPageIndex] = useState(0);
+    const [currentPageIndex, setCurrentPageIndex] = useState(() => {
+        // Inicialize o currentPageIndex a partir do localStorage ou 0 se não houver valor no localStorage.
+        const storedPageIndex = localStorage.getItem('currentPageIndex');
+        return storedPageIndex ? parseInt(storedPageIndex, 10) : 0;
+    });
+
     const pages = ['', 'selectplan', 'pickaddons', 'finishingup'];
+
+    useEffect(() => {
+        // Atualize o localStorage sempre que o currentPageIndex mudar.
+        localStorage.setItem('currentPageIndex', currentPageIndex.toString());
+    }, [currentPageIndex]);
 
     const goToNextPage = () => {
         if (currentPageIndex < pages.length - 1) {

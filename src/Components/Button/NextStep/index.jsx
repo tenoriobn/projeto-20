@@ -9,7 +9,7 @@ export default function NextStep( {styles, nextstep} ) {
 
     return (
         <Link
-            to={pages[nextPageIndex]}
+            to={currentPageIndex === 3 ? '/thankyou' : pages[nextPageIndex]}
             className={`${styles.button} ${currentPageIndex === 3 ? styles.confirm: styles[nextstep]} ${styles[nextstep]}`}
             onClick={() => {goToStep(nextPageIndex)}}
         >

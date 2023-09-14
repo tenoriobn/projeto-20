@@ -7,7 +7,8 @@ import SelectPlan from 'Pages/2-SelectPlan';
 import PickAddOns from 'Pages/3-PickAddOns';
 import FinishingUp from 'Pages/4-FinishingUp';
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';;
+import { BrowserRouter, Route, Routes } from 'react-router-dom';import ThankYou from 'Components/ThankYou';
+;
 
 export default function AppRoutes() {
 
@@ -20,6 +21,7 @@ export default function AppRoutes() {
                         <Route path="selectplan" element={<SelectPlan />} />
                         <Route path="pickaddons" element={<PickAddOns />} />
                         <Route path="finishingup" element={<FinishingUp />} />
+                        <Route path="thankyou" element={<ThankYou />} />
                     </Route>
 
                     <Route path="*" element={<div>Página não encontrada</div>} />

@@ -3,7 +3,7 @@ import styles from './DefaultPage.module.scss';
 import { Outlet } from 'react-router-dom';
 import { NavigationProvider } from 'common/context/NavigationContext';
 import Steps from 'Components/Steps';
-import { FormProvider } from 'common/context/PersonalContext';
+import { FormProvider } from 'common/context/FormContext';
 import Button from 'Components/Button';
 import { PlanProvider } from 'common/context/PlanContext';
 import { AddonsProvider } from 'common/context/AddonsContext';
@@ -11,19 +11,17 @@ import { AddonsProvider } from 'common/context/AddonsContext';
 export default function DefaultPage() {
     return (
         <NavigationProvider>
-            <Steps />
-
             <FormProvider>
                 <PlanProvider>
                     <AddonsProvider>
-                        <main className={styles.main}>
-                            <Outlet />
-                        </main>
+                        <Steps />
+                            <main className={styles.main}>
+                                <Outlet />
+                            </main>
+                        <Button nextstep="nextstep" />
                     </AddonsProvider>
                 </PlanProvider>
             </FormProvider>
-
-            <Button nextstep="nextstep" />
         </NavigationProvider>
     )
 }

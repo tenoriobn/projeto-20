@@ -3,6 +3,7 @@ import styles from './SelectedOptions.module.scss'
 import { usePlanContext } from 'common/context/PlanContext';
 import { useNavigate } from 'react-router-dom';
 import { useAddonsContext } from 'common/context/AddonsContext';
+import { useNavigation } from 'common/context/NavigationContext';
 
 export default function SelectedOptions() {
     const { activePlan, isYearly } = usePlanContext();
@@ -12,8 +13,13 @@ export default function SelectedOptions() {
     const periodCurrency = isYearly ? '/yr' : '/mo';
 
     const navigate = useNavigate();
+    const { goToStep } = useNavigation(); // Use o goToStep do contexto de navegação
+
     const changePlan = () => {
+        // Navegue para a página desejada
         navigate('/selectplan');
+        // Atualize o currentPageIndex usando o goToStep
+        goToStep(1); // Aqui você precisa fornecer o índice correto do step para o qual você está navegando
     };
 
     const totalAddonsValue = selectedAddons.reduce((accumulator, addon) => {
