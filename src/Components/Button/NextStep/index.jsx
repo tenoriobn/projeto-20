@@ -1,19 +1,30 @@
 import { useNavigation } from 'common/context/NavigationContext';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { usePlanContext } from 'common/context/PlanContext'; // Importe o contexto usePlanContext
 
-export default function NextStep( {styles, nextstep} ) {
+export default function NextStep({ styles, nextstep }) {
     const { currentPageIndex, pages, goToStep } = useNavigation();
+    const { activePlan } = usePlanContext();
 
     const nextPageIndex = currentPageIndex + 1;
+    const nextPath = pages[nextPageIndex];
+
+    const canProceed = activePlan !== null;
 
     return (
         <Link
-            to={currentPageIndex === 3 ? '/thankyou' : pages[nextPageIndex]}
-            className={`${styles.button} ${currentPageIndex === 3 ? styles.confirm: styles[nextstep]} ${styles[nextstep]}`}
-            onClick={() => {goToStep(nextPageIndex)}}
+            to={nextPath || '/thankyou'}
+            className={`${styles.button} ${nextPath ? styles[nextstep] : styles.confirm}`}
+            onClick={(e) => {
+                if (!canProceed) {
+                    e.preventDefault();
+                } else if (nextPath) {
+                    goToStep(nextPageIndex);
+                }
+            }}
         >
-            {currentPageIndex === 3 ? "Confirm" : "Next Step"}
+            {nextPath ? "Next Step" : "Confirm"}
         </Link>
-    )
+    );
 }
