@@ -4,7 +4,7 @@ const FormContext = createContext();
 FormContext.displayName = "Form";
 
 export function FormProvider({ children }) {
-    const [formData, setFormData] = useState({});
+    const [formData, setFormData] = useState(null);
 
     return (
         <FormContext.Provider value={{ formData, setFormData }}>

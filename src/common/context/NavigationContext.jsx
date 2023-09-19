@@ -11,13 +11,12 @@ export const NavigationProvider = ({ children }) => {
     const pages = ['', 'selectplan', 'pickaddons', 'finishingup'];
 
     useEffect(() => {
-        // Encontre o índice da página atual com base na rota
         const pageIndex = pages.indexOf(location.pathname.replace('/', ''));
         
-        // Se a página atual não for encontrada nas rotas, defina como 0
         if (pageIndex !== -1) {
             setCurrentPageIndex(pageIndex);
         }
+        // eslint-disable-next-line
     }, [location.pathname]);
 
     const goToNextPage = () => {

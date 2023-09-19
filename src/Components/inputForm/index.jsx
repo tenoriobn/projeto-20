@@ -39,9 +39,9 @@ export default function InputForm() {
         formState: { errors },
         trigger,
     } = useForm({
-        resolver: yupResolver(validationInput),
-        defaultValues: formData,
-    });
+            resolver: yupResolver(validationInput),
+            defaultValues: formData,
+        });
 
     const updateFormData = async (fieldName, value) => {
         const isValid = await trigger(fieldName);
@@ -55,6 +55,8 @@ export default function InputForm() {
         }
 
     };
+
+    console.log(errors)
 
     return (
         <form className={styles.form}>
@@ -79,6 +81,17 @@ export default function InputForm() {
         </form>
     )
 }
+
+
+/*
+
+    1º Fazer no botão `Next Step` o mesmo que é feito com o `State` do `ADD-ONS`:
+        - Criar uma condição que verifica se o `State` é diferente de NULL e também
+        se os objetos `name`, `email` e `phoneNumber` estão dentro de `formData` que é o state
+        - Se estiver o `Next Step` avança normalmente, se não, o `Next Step` ao ser clicado
+        vai exibir as mensagens de erro na parte superior do input.
+
+*/
 
 /*
 
