@@ -13,8 +13,6 @@ export default function Step( {children, to, styles} ) {
                     ${styles.navlink} 
                     ${isActive ? styles.active : ""}
                 `
-                
-                // `${styles.navlink} ${currentPageIndex === stepIndex ? styles.active : ''}`
             } 
             to={to}
             onClick={() => {

@@ -31,7 +31,7 @@ const validationInput = yup.object().shape({
 })
 
 export default function InputForm() {
-    const { formData, setFormData } = useFormContext();
+    const { formData, setFormData, showCustomMessage } = useFormContext();
 
     const {
         register,
@@ -56,15 +56,16 @@ export default function InputForm() {
 
     };
 
-    console.log(errors)
-
     return (
         <form className={styles.form}>
             {inputs.map((input) => (
                 <div key={input.id} className={styles.container__input}>
                     <div className={styles.container__label}>
                         <label className={styles.label}>{input.label}</label>
-                        <p className={styles.error__message}>{errors[input.inputName]?.message}</p>
+                        <p className={styles.error__message}>
+                            {(errors[input.inputName]?.message || ((showCustomMessage && (!formData || !formData[input.inputName])) && customMessage))}
+                        </p>
+
                     </div>
                     <input 
                         placeholder={input.placeholder} 
@@ -72,7 +73,7 @@ export default function InputForm() {
                         className={`${styles.input} ${errors[input.inputName] ? styles.input__error : ""}`}
                         name={input.inputName}
                         {...register(`[${input.inputName}]`)}
-                        onBlur={(e) => updateFormData(input.inputName, e.target.value)} // Atualizamos o valor
+                        onBlur={(e) => updateFormData(input.inputName, e.target.value)}
                     />
 
                 </div>

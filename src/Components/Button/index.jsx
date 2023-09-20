@@ -9,8 +9,6 @@ export default function Button({ nextstep }) {
     const { currentPageIndex } = useNavigation();
     const location = useLocation();
 
-    console.log(currentPageIndex)
-
     if (location.pathname !== '/thankyou') {
         return (
             <footer className={styles.footer}>
