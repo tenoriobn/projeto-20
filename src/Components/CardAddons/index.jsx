@@ -72,9 +72,3 @@ export default function CardAddons() {
         </div>
     )
 }
-
-
-/*
-    Fazer com que o `value` do state seja atualizado automaticamente
-    sem a necessidade de ter que clicar no input para atualizar valor mensal para anual.
-*/

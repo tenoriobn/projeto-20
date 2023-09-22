@@ -13,13 +13,11 @@ export default function SelectedOptions() {
     const periodCurrency = isYearly ? '/yr' : '/mo';
 
     const navigate = useNavigate();
-    const { goToStep } = useNavigation(); // Use o goToStep do contexto de navegação
+    const { goToStep } = useNavigation();
 
     const changePlan = () => {
-        // Navegue para a página desejada
         navigate('/selectplan');
-        // Atualize o currentPageIndex usando o goToStep
-        goToStep(1); // Aqui você precisa fornecer o índice correto do step para o qual você está navegando
+        goToStep(1);
     };
 
     const totalAddonsValue = selectedAddons.reduce((accumulator, addon) => {

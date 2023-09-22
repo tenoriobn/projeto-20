@@ -8,10 +8,10 @@ export default function CardPlan() {
     const { activePlan, setActivePlan, isYearly } = usePlanContext();
 
     const selectedPlan = (plan) => {
-        const updatedPlan = { ...plan }; // Clone do plano para não modificar o objeto original
+        const updatedPlan = { ...plan };
 
         if (isYearly) {
-            updatedPlan.planValue = plan.planValue * 10; // Atualiza o valor para o valor anual
+            updatedPlan.planValue = plan.planValue * 10; 
         }
 
         setActivePlan(updatedPlan);
@@ -55,7 +55,7 @@ export default function CardPlan() {
                         <div className={styles.container__card}>
                             <h4 className={styles.plan__name}>{plan.planName}</h4>
                             <h5 className={styles.plan__value}>
-                            {!isYearly ? `$${plan.planValue}/mo` : `$${plan.planValue * 10}/yr`}
+                                {!isYearly ? `$${plan.planValue}/mo` : `$${plan.planValue * 10}/yr`}
                             </h5>
                             {isYearly ? <p className={styles.plan__discount}>2 months free</p> : ''}
                         </div>

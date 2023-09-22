@@ -25,29 +25,3 @@ export default function DefaultPage() {
         </NavigationProvider>
     )
 }
-
-
-/*
-    Button {
-        Organizar lógica de estilização do botão ****
-        Colocar o container no rodapé sem sobrepor nenhum container****
-        Criar o botão `Go back` e estilizar, deixando na esquerda.***
-    }
-
-    * Refatorar cada componente e estilização******
-        - Espaçamentos***
-        - Cores***
-        - Tamanhos***
-        - Nomeclatura***
-    
-    * Aplicar pseudo-classes `hover, active e etc...`***
-
-    * Corrigir background do `Finishing up` ***
-
-    * Criar componente de `AGRADECIMENTO`
-        - Estilizar o componente.
-    
-    * Iniciar lógica de interação.
-        - Observar a funcionalidades necessárias
-
-*/

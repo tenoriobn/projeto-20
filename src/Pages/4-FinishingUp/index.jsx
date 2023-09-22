@@ -15,8 +15,6 @@ export default function FinishingUp() {
             />
 
             <SelectedOptions />
-
-            {/* <ThankYou /> */}
         </section>
     )
 }

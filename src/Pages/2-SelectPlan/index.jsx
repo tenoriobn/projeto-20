@@ -16,10 +16,3 @@ export default function SelectPlan() {
         </section>
     )
 }
-
-
-/*
-Fazer teste de mesa e definir o algoritmo a ser seguido para
-1- Ao alternar de `mensal` para `anual` o `planValue` seja atualizado automaticamente.
-2- O `planValue` deve atualizar caso seja selecionado outro card, armazenando tanto se for anual quanto mensal.
-*/

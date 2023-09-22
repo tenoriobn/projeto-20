@@ -5,7 +5,7 @@ export const NavigationContext = createContext();
 NavigationContext.displayName = "Navigation";
 
 export const NavigationProvider = ({ children }) => {
-    const [currentPageIndex, setCurrentPageIndex] = useState(0); // Inicialize com 0
+    const [currentPageIndex, setCurrentPageIndex] = useState(0);
     const location = useLocation();
 
     const pages = ['', 'selectplan', 'pickaddons', 'finishingup'];
