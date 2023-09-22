@@ -3,8 +3,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 export default function Step( {children, to, styles} ) {
-    const { pages, goToStep } = useNavigation();
+    const { pages, currentStep, goToStep } = useNavigation();
     const stepIndex = pages.indexOf(to);
+
+    const isClickable = stepIndex <= currentStep;
 
     return (
         <NavLink 
@@ -15,8 +17,12 @@ export default function Step( {children, to, styles} ) {
                 `
             } 
             to={to}
-            onClick={() => {
-                goToStep(stepIndex);
+            onClick={(e) => {
+                if (!isClickable) {
+                    e.preventDefault();
+                } else {
+                    goToStep(stepIndex);
+                }
             }}
         >
             {children}
