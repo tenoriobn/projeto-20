@@ -5,3 +5,12 @@
 body {
     background-color: $magnolia;
 }
+
+@media screen and (min-width: 992px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+}
