@@ -14,6 +14,7 @@
         align-items: center;
     
         padding: 1rem;
+        transition: $small;
     
         &:hover {
             border-color: $hoverPurplish;
@@ -37,6 +38,7 @@
                 
                 width: 20px;
                 height: 20px;
+                transition: $small;
     
                 &:checked {
                     background-image: url(./icon-checkmark.svg);

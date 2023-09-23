@@ -40,6 +40,7 @@
         .nextstep {
             background-color: $marineBlue;
             margin-left: auto;
+            transition: $small;
     
             &:hover {
                 background-color: $HoverMarineBlue;
@@ -49,6 +50,7 @@
         .confirm {
             background-color: $purplishBlue;
             margin-left: auto;
+            transition: $small;
     
             &:hover {
                 background-color: $hoverPurplish;
@@ -64,15 +66,12 @@
             cursor: pointer;
             @include font-styling($coolGray, .875rem, 700);
             text-decoration: none;
+            transition: $small;
         
             &:hover {
                 color: $marineBlue;
             }
         }
-        
-        // .goback_none {
-        //     display: none;
-        // }
     }
 
 

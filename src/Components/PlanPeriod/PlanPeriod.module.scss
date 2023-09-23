@@ -19,6 +19,7 @@
     }
 
     .select {
+        transition: $small;
         color: $marineBlue;
     }
 
@@ -42,7 +43,7 @@
             top: .5px;
             left: 6px;
             cursor: pointer;
-            transition: .3s;
+            transition: $small;
 
             &:checked {
                 background-color: $white;

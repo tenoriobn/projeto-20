@@ -28,6 +28,8 @@
                 color: $coolGray;
                 text-decoration: underline;
 
+                transition: color $small;
+
                 &:hover {
                     font-weight: 700;
                     color: $hoverPurplish;

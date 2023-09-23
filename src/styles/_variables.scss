@@ -17,6 +17,9 @@ $white: hsl(0, 0%, 100%);
 //Fonts
 $ubuntu: 'Ubuntu', sans-serif;
 
+// transition
+$small: .3s;
+
 //Mixins
 @mixin font-styling($color, $font-size, $font-weight) {
     color: $color;

@@ -36,6 +36,8 @@
             height: 40px;
     
             padding: 0 .875rem;
+
+            transition: $small;
     
             &:focus {
                 border-color: $hoverPurplish;

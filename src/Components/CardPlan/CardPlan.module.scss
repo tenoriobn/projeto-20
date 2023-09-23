@@ -15,6 +15,8 @@
         gap: .875rem;
     
         padding: 1rem;
+
+        transition: $small;
     
         &:hover {
             border-color: $hoverPurplish;
@@ -41,6 +43,7 @@
 
     .plan_active {
         border-color: $hoverPurplish;
+        transition: $small;
     }
 }
 
