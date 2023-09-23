@@ -12,51 +12,53 @@
 
     padding: 2rem 1rem 0 1rem;
 
-    .nav {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-
-        .li {
+    .steps {
+        .list__steps {
             display: flex;
+            justify-content: center;
             gap: 1rem;
 
-            list-style: none;
-
-            .navlink {
-                @include font-styling($white, .875rem, 700);
-                text-decoration: none;
-                
+            .step__item {
                 display: flex;
-                align-items: center;
-                justify-content: center;
-
-                border: 1px solid $white;
-                border-radius: 100%;
-
-                width: 32px;
-                height: 32px;
-            }
-
-            .active {
-                background-color: $lightBlue;
-                border-color: $lightBlue;
-                color: $marineBlue;
-            }
-
-            .step__section {
-                display: none;
-
-                .step__number {
-                    @include font-styling($pastelBlue, .75rem, 400);
-                    text-transform: uppercase;
-                    margin-bottom: .375rem;
+                gap: 1rem;
+    
+                list-style: none;
+    
+                .navlink {
+                    @include font-styling($white, .875rem, 700);
+                    text-decoration: none;
+                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    border: 1px solid $white;
+                    border-radius: 100%;
+    
+                    width: 32px;
+                    height: 32px;
                 }
     
-                .step__name {
-                    @include font-styling($white, .875rem, 700);
-                    text-transform: uppercase;
-                    letter-spacing: .0612rem;
+                .active {
+                    background-color: $lightBlue;
+                    border-color: $lightBlue;
+                    color: $marineBlue;
+                }
+    
+                .step__section {
+                    display: none;
+    
+                    .step__number {
+                        @include font-styling($pastelBlue, .75rem, 400);
+                        text-transform: uppercase;
+                        margin-bottom: .375rem;
+                    }
+        
+                    .step__name {
+                        @include font-styling($white, .875rem, 700);
+                        text-transform: uppercase;
+                        letter-spacing: .0612rem;
+                    }
                 }
             }
         }
@@ -77,15 +79,18 @@
     
         padding: 2.5rem 2rem 0 2rem;
 
-        .nav {
-            flex-direction: column;
-            gap: 2rem;
-            
-            .li {   
-                .step__section {
-                    display: block;
+        .steps {
+            .list__steps {
+                flex-direction: column;
+                gap: 2rem;
+                
+                .step__item {   
+                    .step__section {
+                        display: block;
+                    }
                 }
             }
+            
         }
     }
 }
